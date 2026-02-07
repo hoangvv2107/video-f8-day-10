@@ -1,0 +1,67 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.7);
+}
+a,
+form,
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+/* ===================header=================== */
+.header {
+  background: url(../img/banner-shop.jpg);
+  background-size: cover;
+  height: 496px;
+  color: white;
+}
+.opacity {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+}
+.header-upper {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav .link {
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 1.1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 25px;
+}
+.header-icon {
+  font-size: 2rem;
+}
+
+.header-icon-search {
+  margin: 0 33px 0 20px;
+}
