@@ -1,0 +1,127 @@
+:root {
+  --color-off: #ccc;
+  --color-on: #00897b;
+  --color-icon: #fff;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 20px;
+}
+table,td,th{
+  border: 2px solid #ccc;
+}
+th,td{
+  padding: 20px;
+}
+label{
+  cursor: pointer;
+}
+/* ============checkbox ============*/
+.checkbox-label {
+  position: relative;
+}
+.checkbox-label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-off);
+  border-radius: 3px;
+  transition: all ease-in-out 0.1s;
+}
+.checkbox-label:has(.checkbox-input:checked)::before {
+  background-color: var(--color-on);
+  border-color: var(--color-on);
+}
+.check-icon {
+  position: absolute;
+  bottom: 9px;
+  left: 4px;
+  color: var(--color-icon);
+  font-size: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out 0.1s;
+}
+.checkbox-input:checked ~ .check-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============radio ============*/
+.radio-label {
+  position: relative;
+  display: inline-block;
+}
+.radio-label::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-off);
+  border-radius: 50%;
+  transition: all ease-in-out 0.2s;
+}
+.radio-label:has(.radio-input:checked)::before {
+  border-color: var(--color-on);
+}
+.radio-label::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--color-on);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out 0.2s;
+}
+.radio-label:has(.radio-input:checked)::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============switch ============*/
+.switch-label {
+  --color-track: #80cbc4;
+  position: relative;
+}
+.switch-label::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 15px;
+  border-radius: 99px;
+  background-color: var(--color-off);
+  transition: all ease-in-out 0.2s;
+}
+.switch-label::after {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: var(--color-icon);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+  transition: all ease-in-out 0.2s;
+}
+.switch-label:has(.switch-input:checked)::before {
+  background-color: var(--color-track);
+}
+.switch-label:has(.switch-input:checked)::after {
+  background-color: var(--color-on);
+  left: 100%;
+  translate: -100% -50%;
+}
