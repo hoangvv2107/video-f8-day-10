@@ -43,11 +43,15 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+
 .nav {
   display: flex;
   flex: 1;
   justify-content: flex-end;
   align-items: center;
+}
+.nav .item {
+  position: relative;
 }
 .nav .link {
   font-family: "PT Sans", sans-serif;
@@ -55,13 +59,99 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   padding: 25px;
 }
+
+.sub-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  scale: 1 0;
+  opacity: 0;
+  transform-origin: center 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav .item:hover .sub-nav {
+  scale: 1 1;
+  opacity: 1;
+  visibility: visible;
+}
+.sub-nav__item {
+  min-width: 220px;
+  height: 46px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.sub-nav__item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.sub-nav__link {
+  display: block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.6rem;
+  padding: 0 25px;
+  line-height: 46px;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+}
+
+.sub-nav__item:hover {
+  background: #b80257;
+}
+.sub-nav__link:hover {
+  transform: translateX(5px);
+  color: #fff;
+}
 .header-icon {
+  display: flex;
+  cursor: pointer;
   font-size: 2rem;
+  user-select: none;
 }
 
 .header-icon-search {
   margin: 0 33px 0 20px;
+}
+.header-search {
+  position: relative;
+}
+.search-form {
+  position: absolute;
+  top: 100%;
+  right: 15px;
+  width: 280px;
+  height: 55px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  display: none;
+}
+.search-form-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 5px;
+}
+.search-form input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ececec;
+  outline: none;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: transparent;
+  font-size: 1.4rem;
+}
+.search-form button {
+  width: 48px;
+  background-color: #b80257;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-input:checked~.search-form{
+  display: flex;
 }
